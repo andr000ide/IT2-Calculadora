@@ -18,6 +18,7 @@ namespace CalculadoraMelhorada.Controllers
         [HttpPost]
         public ActionResult Index(string bt)
         {
+
             return View();
         }
     }
