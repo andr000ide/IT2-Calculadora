@@ -1,0 +1,20 @@
+Calculadora Simples 
+
+constituida por:
+- 10 botoes p/algarismos ( 0-9)
+- 5 botoes p/ operadores(+,-,*,:,=)
+- 1 botao para limpar(c)
+- 1 botoao para 'decimal' (.)
+- 1 botao para efetuar o inverso (+/-)
+- 1 visor
+
+algoritmo:
+- qd se pressionar o botao c , deve ser efetuado um 'reset' total *a calculadora
+- qd se pressionar o botao + , deve efetuar-se soma
+- qd se pressionar o botao - , deve efetuar-se subtração
+- qd se pressionar o botao * , deve efetuar-se multiplicação
+- qd se pressionar o botao : , deve efetuar-se divisão
+- qd se pressionar o botao = , deve apresentar-se o resultado da operacao no visor
+- qd se pressionar o botao . , deve adicionar-se um ponto à direita do numero 
+e não pode ser usado nesse numero outra vez
+- qd se pressionar o botao (+/-) , deve mostrar no visor o inverso do numero 
