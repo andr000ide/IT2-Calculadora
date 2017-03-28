@@ -11,10 +11,13 @@ namespace CalculadoraMelhorada.Controllers
         // GET: Home
         public ActionResult Index()
         {
+            //inicializar valores
+            ViewBag.Visor = "0";
+            Session["PrimeiroOperador"] = true;
             return View();
         }
 
-        // POST: Home
+        //POST : Home
         [HttpPost]
         public ActionResult Index(string bt, string visor)
         {
@@ -34,10 +37,47 @@ namespace CalculadoraMelhorada.Controllers
                     if (visor.Equals("0")) visor = bt;
                     else visor += bt; // visor = visor+bt;
                     break;
+                case ",":
+                    if (!visor.Contains(",")) { visor += ","; }
+                    break;
+                case "+/-":
+                    //visor = Convert.ToDouble(visor) * -1 + "";
+                    if (visor.StartsWith("-")) { visor.Replace("-", ""); }
+                    else if( !visor.Equals("0") )visor = "-" + visor;
+                    break;
+                case "c":
+                    visor = "0";
+                    Session["PrimeiroOperador"] = true;
+                    break;
+                case "+":
+                case "-":
+                case "x":
+                case ":":
+                    if ((bool)Session["PrimeiroOperador"])
+                    {
+                        //guardar valor do VISOR
+                        Session["operando"] = visor;
+                        //limpar o VISOR
+                        visor = "0";
+                        //guardar o OPERADOR 
+                        Session["operador"] = bt;
+                        //marcar como tendo utilizado o operador
+                        Session["PrimeiroOperador"] = false;
+                    }
+                    else
+                    {
+                        // se não é a primeira vez que se clica num OPERADOR 
+                        // vou utilizar os valores anteriores
+                        switch ((string)Session["operador"])
+                        {
+                            //recuperar código da primeira calculadora
+                        }
+                        //guardar os novos valores ... 
+                    }
+                    break;
             }
             //entregar os valores à VIEW 
             ViewBag.Visor = visor;
-
             return View();
         }
     }
