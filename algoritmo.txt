@@ -9,12 +9,18 @@ constituida por:
 - 1 visor
 
 algoritmo:
+
+- o visor deve ser iniciado a 0 .
 - qd se pressionar o botao c , deve ser efetuado um 'reset' total *a calculadora
 - qd se pressionar o botao + , deve efetuar-se soma
 - qd se pressionar o botao - , deve efetuar-se subtração
 - qd se pressionar o botao * , deve efetuar-se multiplicação
 - qd se pressionar o botao : , deve efetuar-se divisão
 - qd se pressionar o botao = , deve apresentar-se o resultado da operacao no visor
+caso não exista valores inseridos , não sera efetuada nenhuma conta
 - qd se pressionar o botao . , deve adicionar-se um ponto à direita do numero 
 e não pode ser usado nesse numero outra vez
 - qd se pressionar o botao (+/-) , deve mostrar no visor o inverso do numero 
+- no visor o primeiro valor nao deve desaparecer quando for selecionado um operador mas sim quando o segundo
+valor for inserido
+- 
